@@ -61,8 +61,23 @@ sum = members.reduce(function(accumulator,currentValue){
         return  accumulator+ Totalexp;
    
 },0);
-console.log( sum);
+console.log(sum,'sum');
 
 //===============================================================
 console.log("Create a prototype function which will return the total experience form the user id")
 
+Array.prototype.userDefine = function(){
+   var add =  this.reduce(function(accumulator,currentValue){
+       // console.log(accumulator);
+        //console.log(currentValue);
+       Totalexp =   currentValue.isPermanent?(currentValue.workExp+ currentValue.deptExp):0
+        
+            return  accumulator+ Totalexp;
+       
+    },0);
+    return add;
+}
+
+let sumExp = members.userDefine();
+
+console.log(sumExp);
